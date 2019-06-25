@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #000060;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="javafx_classapp.HomeController">
+   <children>
+      <VBox fx:id="zonneHome" layoutX="61.0" layoutY="28.0" prefHeight="666.0" prefWidth="490.0" style="-fx-background-color: #000050;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BIENVENU DANS LE CREATEUR DE LA BASE DE DONNEES" textAlignment="CENTER" wrappingWidth="293.4560546875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="100.0" left="90.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="Créer la base de données" textAlignment="CENTER" wrappingWidth="177.626953125">
+               <VBox.margin>
+                  <Insets left="155.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="nomBDD" style="-fx-background-color: #999;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <Text fx:id="msgErreure" fill="#f70505" strokeType="OUTSIDE" strokeWidth="0.0" text="Message Erreur" visible="false">
+               <VBox.margin>
+                  <Insets left="175.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Text>
+            <Button mnemonicParsing="false" onAction="#ActonCreer" prefHeight="25.0" prefWidth="100.0" text="CREER">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="195.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des bases de données">
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Text>
+            <ListView prefHeight="272.0" prefWidth="470.0" style="-fx-background-color: #999;">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+      </VBox>
+      <Pane fx:id="zoneGestionTable" layoutX="13.0" prefHeight="679.0" prefWidth="575.0" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="186.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION DE TABLE">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Text>
+            <HBox layoutX="56.0" layoutY="73.0" prefHeight="21.0" prefWidth="463.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label text="N°" textFill="#f8f4f4">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="NOM" textFill="#f2eeee">
+                     <HBox.margin>
+                        <Insets right="300.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="TAILLE" textFill="#f2eeee" />
+               </children>
+            </HBox>
+            <ListView fx:id="liste_Table" layoutX="60.0" layoutY="100.0" prefHeight="227.0" prefWidth="425.0" />
+            <Label layoutX="23.0" layoutY="369.0" text="AJOUTER UNE TABLE" textFill="#fcfafa" />
+            <TextField fx:id="Input_Nouvelle_Table" layoutX="169.0" layoutY="365.0" prefHeight="25.0" prefWidth="278.0" />
+            <Button layoutX="464.0" layoutY="365.0" mnemonicParsing="false" onAction="#CreerNouvelleTable" prefHeight="25.0" prefWidth="100.0" text="AJOUTER" />
+            <Text fill="WHITE" layoutX="8.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNEES TABLE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Text>
+            <ListView fx:id="listeDonneesChamps" layoutX="6.0" layoutY="442.0" prefHeight="200.0" prefWidth="559.0" />
+            <Button layoutX="351.0" layoutY="413.0" mnemonicParsing="false" onAction="#ActionTaperREquete" prefHeight="21.0" prefWidth="214.0" text="TAPPER UNE REQUETTE" textAlignment="CENTER" />
+            <Separator layoutX="-3.0" layoutY="401.0" prefHeight="3.0" prefWidth="581.0" />
+            <Separator layoutX="41.0" layoutY="61.0" prefHeight="3.0" prefWidth="463.0" />
+            <Text fx:id="TextNomTable" fill="WHITE" layoutX="128.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM_TABLE">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button layoutX="490.0" layoutY="125.0" mnemonicParsing="false" onAction="#InsererDansLaTable" prefHeight="25.0" prefWidth="75.0" text="INSERER" />
+            <Button layoutX="490.0" layoutY="162.0" mnemonicParsing="false" onAction="#SuprimerTable" prefHeight="25.0" prefWidth="75.0" text="SUPRIMER" />
+            <StackPane fx:id="zonneChamps" layoutX="-14.0" layoutY="-2.0" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #666689;" visible="false">
+               <children>
+                  <Pane opacity="0.27" prefHeight="700.0" style="-fx-background-color: #ffffff;" />
+                  <VBox opacity="0.72" prefHeight="300.0" prefWidth="100.0" style="-fx-background-color: #777;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ENTRER LES CHAMPS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="200.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="25.0" prefWidth="600.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+                                 <HBox.margin>
+                                    <Insets left="25.0" right="70.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TYPE">
+                                 <HBox.margin>
+                                    <Insets right="120.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TAILLE">
+                                 <HBox.margin>
+                                    <Insets right="130.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CLE PRIMAIRE" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="48.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="nom1" prefHeight="25.0" prefWidth="99.0" />
+                              <TextField fx:id="type1">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="Taille1">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <CheckBox fx:id="Cle1" mnemonicParsing="false" text="CheckBox">
+                                 <HBox.margin>
+                                    <Insets left="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="48.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="nom2" prefHeight="25.0" prefWidth="99.0" />
+                              <TextField fx:id="type2">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="Taille2">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <CheckBox fx:id="Cle2" mnemonicParsing="false" text="CheckBox">
+                                 <HBox.margin>
+                                    <Insets left="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="48.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="nom3" prefHeight="25.0" prefWidth="99.0" />
+                              <TextField fx:id="type3">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="Taille3">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <CheckBox fx:id="Cle3" mnemonicParsing="false" text="CheckBox">
+                                 <HBox.margin>
+                                    <Insets left="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="48.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="nom4" prefHeight="25.0" prefWidth="99.0" />
+                              <TextField fx:id="type4">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="Taille4">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <CheckBox fx:id="Cle4" mnemonicParsing="false" text="CheckBox">
+                                 <HBox.margin>
+                                    <Insets left="25.0" top="3.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Button mnemonicParsing="false" onAction="#EnregistrerChamps" prefHeight="25.0" prefWidth="108.0" text="ENREGISTRER">
+                           <VBox.margin>
+                              <Insets left="450.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                     <StackPane.margin>
+                        <Insets bottom="200.0" top="100.0" />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="700.0" prefWidth="581.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
